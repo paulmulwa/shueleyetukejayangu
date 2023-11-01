@@ -1,0 +1,178 @@
+@extends('admin.admin_dashboard')
+@section('admin')
+<!-- partial -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+
+<div class="page-content">
+
+    <nav class="page-breadcrumb">
+        <ol class="breadcrumb">
+    {{-- <a href= {{route('admin.add.property')}} class= "btn btn-inverse-info">Add Property</a> --}}
+
+
+
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="col-md-12">
+<div class="card">
+  <div class="card-body">
+    <h3 class="text-center mb-3 mt-4">Choose a plan</h3>
+    {{-- <p class="text-muted text-center mb-4 pb-2">Choose the features and functionality your team need today. Easily upgrade as your company grows.</p> --}}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 stretch-card grid-margin grid-margin-md-0">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="text-center mt-3 mb-4">Basic</h4>
+              <i data-feather="award" class="text-primary icon-xxl d-block mx-auto my-3"></i>
+              <h1 class="text-center">Free</h1>
+              <p class="text-muted text-center mb-4 fw-light">Upto 1 propertyper month</p>
+              <h5 class="text-primary text-center mb-4">Upto 1 property per month</h5>
+              <table class="mx-auto">
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Upto 1 property per month</p></td>
+                </tr>
+                <tr>
+
+                <tr>
+                  <td><i data-feather="x" class="icon-md text-danger me-2"></i></td>
+                  <td><p class="text-muted">Branded website</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="x" class="icon-md text-danger me-2"></i></td>
+                  <td><p class="text-muted">Dedicated account manager</p></td>
+                </tr>
+
+                <td><i data-feather="x" class="icon-md text-danger me-2"></i></td>
+                <td><p class="text-muted">Invoicing</p></td>
+              </tr>
+              <tr>
+                <td><i data-feather="x" class="icon-md text-danger me-2"></i></td>
+                <td><p class="text-muted">Online payments</p></td>
+              </tr>
+
+                <tr>
+                  <td><i data-feather="x" class="icon-md text-danger me-2"></i></td>
+                  <td><p class="text-muted">Premium apps</p></td>
+                </tr>
+              </table>
+              <div class="d-grid">
+                {{-- <button class="btn btn-primary mt-4">Basic</button> --}}
+                <a href="" class="btn btn-primary mt-4">Start Now</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 stretch-card grid-margin grid-margin-md-0">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="text-center mt-3 mb-4">Business</h4>
+              <i data-feather="gift" class="text-success icon-xxl d-block mx-auto my-3"></i>
+              <h1 class="text-center">Ksh 5000</h1>
+              <p class="text-muted text-center mb-4 fw-light">Unlimited months</p>
+              <h5 class="text-success text-center mb-4">Up to 3 units</h5>
+              <table class="mx-auto">
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Accounting dashboard</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Invoicing</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Online payments</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Branded website</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="x" class="icon-md text-danger me-2"></i></td>
+                  <td><p class="text-muted">Dedicated account manager</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="x" class="icon-md text-danger me-2"></i></td>
+                  <td><p class="text-muted">Premium support</p></td>
+                </tr>
+              </table>
+              <div class="d-grid">
+                <a href="{{ route('buy.business.plan') }}" class="btn btn-success mt-4">Start Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="text-center mt-3 mb-4">Professional</h4>
+              <i data-feather="briefcase" class="text-primary icon-xxl d-block mx-auto my-3"></i>
+              <h1 class="text-center">Ksh 10,000</h1>
+              <p class="text-muted text-center mb-4 fw-light">Unlimited Months</p>
+              <h5 class="text-primary text-center mb-4">Up to 10 units</h5>
+              <table class="mx-auto">
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Accounting dashboard</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Invoicing</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Online payments</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Branded website</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Dedicated account manager</p></td>
+                </tr>
+                <tr>
+                  <td><i data-feather="check" class="icon-md text-primary me-2"></i></td>
+                  <td><p>Premium apps</p></td>
+                </tr>
+              </table>
+              <div class="d-grid">
+                <a href="{{ route('buy.professional.plan') }}" class="btn btn-primary mt-4">Start Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@endsection
