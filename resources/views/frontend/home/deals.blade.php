@@ -53,13 +53,13 @@ $property = App\Models\Property::latest()->where('status', '1')->where('hot','1'
                             <h6><a href="{{ url('featuredproperty/details/'.$item->id.'/.'.$item->property_slug) }}">{{ $item->property_name }}</a></h6>
 
                         </div>
-                        <div class="buy-btn pull-right"><a href="{{ url('featuredproperty/details/'.$item->id.'/.'.$item->property_slug) }}">{{ $item->property_status }}</a></div>
+                        {{-- <div class="buy-btn pull-right"><a href="{{ url('featuredproperty/details/'.$item->id.'/.'.$item->property_slug) }}">{{ $item->property_status }}</a></div> --}}
                     </div>
                     <div class="title-text"><h4>
                         <a href="{{ url('featuredproperty/details/'.$item->id.'/.'.$item->property_slug) }}">{{ $item->city }}</a></h4></div>
                     <div class="price-box clearfix">
                         <div class="price-info pull-left">
-                            <h6>Start From</h6>
+                            <h6>Rent P/M</h6>
                         <h4>Ksh{{ number_format($item->lowest_price) }}</h4>
                         </div>
                         <ul class="other-option pull-right clearfix">

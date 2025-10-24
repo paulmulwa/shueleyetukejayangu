@@ -26,9 +26,9 @@ $data = App\Models\User::find($id);
       <div class="card-body">
         <div class="container-fluid d-flex justify-content-between">
           <div class="col-lg-3 ps-0">
-            <a href="#" class="noble-ui-logo logo-light d-block mt-3">Noble<span>UI</span></a>
-            <p class="mt-1 mb-1"><b>NobleUI Themes</b></p>
-            <p>108,<br> {{$data->name }}<br>London, WC1B 3NA.</p>
+            <a href="#" class="noble-ui-logo logo-light d-block mt-3">Keja<span>Yangu</span></a>
+            <p class="mt-1 mb-1"><b>Keja Yangu</b></p>
+            <p>108,<br> {{$data->name }}<br>Nairobi,kenya.</p>
             <h5 class="mt-5 mb-2 text-muted">Invoice to :</h5>
             <p>{{$data->name }}<br> {{$data->email }}<br>{{$data->address}}</p>
           </div>
@@ -79,15 +79,15 @@ $data = App\Models\User::find($id);
 
                         <tr>
                           <td class="text-bold-800">Total</td>
-                          <td class="text-bold-800 text-end"> $ 16,688.00</td>
+                          <td class="text-bold-800 text-end"> ksh 16,688.00</td>
                         </tr>
                         <tr>
                           <td>Payment Made</td>
-                          <td class="text-danger text-end">(-) $ 4,688.00</td>
+                          <td class="text-danger text-end">(-) ksh 4,688.00</td>
                         </tr>
                         <tr class="bg-dark">
                           <td class="text-bold-800">Balance Due</td>
-                          <td class="text-bold-800 text-end">$ 12,000.00</td>
+                          <td class="text-bold-800 text-end">ksh 12,000.00</td>
                         </tr>
                       </tbody>
                   </table>

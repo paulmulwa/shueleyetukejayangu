@@ -48,14 +48,14 @@
     <tr>
         <td valign="top">
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>Paulo</strong>Mulwaaar</h2>
+          <h2 style="color: green; font-size: 26px;"><strong>Keja</strong>Yangu</h2>
         </td>
         <td align="right">
             <pre class="font" >
-               EasyShop Head Office
-               Email:support@easylearningbd.com <br>
-               Mob: 1245454545 <br>
-               Dhaka 1207,Dhanmondi:#4 <br>
+               Keja Yangu
+               Email:support@kejayangu.com <br>
+               Mob: +254705069145 <br>
+               Nairobi, Kenya <br>
 
             </pre>
         </td>

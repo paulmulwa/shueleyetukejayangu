@@ -153,9 +153,9 @@
                                         </div><!-- Col -->
                                         <div class="col-sm-3">
                                             <div class="form-group mb-3">
-                                                <label class="form-label">State</label>
+                                                <label class="form-label">County</label>
                                                 <select name="state" class="form-select" id="exampleFormControlSelect1">
-                                                    <option selected="" disabled="">Select State</option>
+                                                    <option selected="" disabled="">Select County</option>
                                                     @foreach ($pstate as $state)
                                                         <option value="{{ $state->id }}"
                                                             {{ $state->id == $property->state ? 'selected' : '' }}>

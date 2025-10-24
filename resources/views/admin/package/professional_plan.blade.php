@@ -26,9 +26,9 @@ $data = App\Models\User::find($id);
       <div class="card-body">
         <div class="container-fluid d-flex justify-content-between">
           <div class="col-lg-3 ps-0">
-            <a href="#" class="noble-ui-logo logo-light d-block mt-3">Noble<span>UI</span></a>
-            <p class="mt-1 mb-1"><b>NobleUI Themes</b></p>
-            <p>108,<br> {{$data->name }}<br>London, WC1B 3NA.</p>
+            <a href="#" class="noble-ui-logo logo-light d-block mt-3">Keja<span>Yangu</span></a>
+            <p class="mt-1 mb-1"><b>Keja Yangu</b></p>
+            <p>108,<br> {{$data->name }}<br>Nairobi, Kenya.</p>
             <h5 class="mt-5 mb-2 text-muted">Invoice to :</h5>
             <p>{{$data->name }}<br> {{$data->email }}<br>{{$data->address}}</p>
           </div>
@@ -37,8 +37,8 @@ $data = App\Models\User::find($id);
             {{-- <h6 class="text-end mb-5 pb-4"># INV-002308</h6> --}}
             <p class="text-end mb-1">Balance Due</p>
             <h4 class="text-end fw-normal">Ksh 72,420.00</h4>
-            <h6 class="mb-0 mt-3 text-end fw-normal mb-2"><span class="text-muted">Invoice Date :</span> 25rd Jan 2022</h6>
-            <h6 class="text-end fw-normal"><span class="text-muted">Due Date :</span> 12th Jul 2022</h6>
+            <h6 class="mb-0 mt-3 text-end fw-normal mb-2"><span class="text-muted">Invoice Date :</span> 24th  Oct 2025</h6>
+            <h6 class="text-end fw-normal"><span class="text-muted">Due Date :</span> 12th Nov 2025</h6>
           </div>
         </div>
         <div class="container-fluid mt-5 d-flex justify-content-center w-100">
@@ -79,15 +79,15 @@ $data = App\Models\User::find($id);
 
                         <tr>
                           <td class="text-bold-800">Total</td>
-                          <td class="text-bold-800 text-end"> $ 16,688.00</td>
+                          <td class="text-bold-800 text-end"> Ksh 16,688.00</td>
                         </tr>
                         <tr>
                           <td>Payment Made</td>
-                          <td class="text-danger text-end">(-) $ 4,688.00</td>
+                          <td class="text-danger text-end">(-) Ksh 4,688.00</td>
                         </tr>
                         <tr class="bg-dark">
                           <td class="text-bold-800">Balance Due</td>
-                          <td class="text-bold-800 text-end">$ 12,000.00</td>
+                          <td class="text-bold-800 text-end">Ksh 12,000.00</td>
                         </tr>
                       </tbody>
                   </table>

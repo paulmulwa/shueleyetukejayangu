@@ -171,6 +171,9 @@ public function PropertyType ($id){
 }
 
 
+
+
+
 public function StateDetails($id){
 $property = Property::Where('status', '1')->where('state', $id)->get();
 //when state is sam as requested id
