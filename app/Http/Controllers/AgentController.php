@@ -64,7 +64,7 @@ return view('agent.agent_login');
                 'alert-type' => 'success'
             );
 
-            return redirect('agent/login')->with($notification);
+            return redirect('login')->with($notification);
             //return redirect('/agent/login');
         }
         }
