@@ -24,10 +24,8 @@
                         <th>Image</th>
                         <th>property Name</th>
                         <th>property Type</th>
-                        <th>Status Type</th>
                         <th>City</th>
-                        <th>Status</th>
-                        <th>Property Code</th>
+                        <th>Status Type</th>
                         <th>Action</th>
                         {{-- <th>Start date</th>
                         <th>Salary</th> --}}
@@ -49,7 +47,6 @@
 
                       <td>{{$item->property_status}}</td>
                         <td>{{$item->city}}</td>
-                        <td>{{$item->property_code}}</td>
                         <td>
                            @if ($item->status == 1)
                 <span class="badge rounded-pill bg-success">Active</span>

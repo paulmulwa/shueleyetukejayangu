@@ -1,28 +1,38 @@
 <?php
 
 use App\Exports\PermissionExport;
-use App\Imports\PermissionImport;
-use Illuminate\Support\Facades\Route;
-use App\Providers\RouteServiceProvider;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Agent\AgentPropertyController;
 use App\Http\Controllers\AgentController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\ChatController;
-///use App\Http\Middleware\RedirectIfAuthenticated;
-use App\Http\Controllers\Backend\RoleController;
-use App\Http\Middleware\RedirectIfAuthenticated;
-
-use App\Http\Controllers\Backend\StateController;
-use App\Http\Controllers\Frontend\IndexController;
-use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\CouraselController;
+//use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\PropertyController;
-use App\Http\Controllers\Frontend\CompareController;
-use App\Http\Controllers\Frontend\WishlistController;
-use App\Http\Controllers\Agent\AgentPropertyController;
-use App\Http\Controllers\Backend\TestimonialController;
+///use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\PropertyTypeController;
+use App\Http\Controllers\Backend\RoleController;
+
+use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\StateController;
+use App\Http\Controllers\Backend\TestimonialController;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\Frontend\CompareController;
+use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\WishlistController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\UserContactController;
+use App\Http\Controllers\UserController;
+use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Imports\PermissionImport;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Route;
+
+
 
 //use Illuminate\Pagination\Paginator;
 //use Illuminate\Support\ServiceProvider;
@@ -49,6 +59,12 @@ Route::get('/', [UserController::class, 'Index']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+///dashboard light
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('light.dashboard');
+///////////////////////////USER////////////////////////////////////////////////////////
+
 ///////////////////////////USER////////////////////////////////////////////////////////
 
 Route::middleware('auth')->group(function () {
@@ -91,6 +107,19 @@ require __DIR__.'/auth.php';
 Route::middleware(['auth','roles:admin'])->group(function(){
  Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name
     ('admin.dashboard');
+    Route::get('/admin/dashboard/light', [AdminController::class, 'AdminDashboardLight'])->name
+    ('admin.dashboard.light');
+    Route::get('/admin/index/light', [AdminController::class, 'AdminDashboardLight'])->name
+    (' admin.index.light');
+
+
+   //');
+//}
+
+
+
+
+
 Route::get('/admin/logout',[AdminController::class,'AdminLogout'])
     ->name('admin.logout');
 Route::get('/admin/profile',[AdminController::class,'AdminProfile'])
@@ -140,6 +169,13 @@ Route::post('/agent/register',[AgentController::class,'AgentRegister'])
 
  //End group Agent
 ////////////////////////ALL PROPERTIES////////////////////////////////////
+Route::controller(AgentController::class)->group(function(){
+    Route::get('/agents/front_agents', 'FrontAllAgents')->name('agents/front_agents');
+});
+
+
+/////////////////////endmonday//////////////////////////////////////
+
 Route::controller(PropertyController::class)->group(function(){
 
     Route::get('/all/property', 'AllProperty')->name('all.property');
@@ -212,7 +248,37 @@ Route::controller(SettingController::class)->group(function(){
     Route::get('/site/setting', 'SiteSetting')->name('site.setting');
     Route::post('update/site/setting', 'UpdateSiteSetting')->name('update.site.setting');
 
+ });
 
+/////User Contact us in contact us page..
+Route::controller(UserContactController::class)->group(function(){
+    Route::post('contactus/contactus', 'UserContact')->name('user.contact');
+    Route::get('admin/user/message', 'AdminUsermessage')->name('admin.user.message');
+    // Route::get('/details/user/{id}','DetailsUser')->name('details.contacts');
+    // Route::get('/details/user/contacts/{id}','DetailsUser')->name('details.user.contacts');
+
+    Route::get('/delete/user/contacts/{id}','DeleteUser')->name('delete.user.contacts');
+
+    ///coming here
+    // Route::get('contactus/contactus', 'UserContact')->name('contactus.contactus');
+
+
+
+
+//}
+ });
+
+
+
+
+ Route::controller(ContactUsController::class)->group(function(){
+    Route::get('/contacts/admincontactus', 'AdminContactUs')->name('contacts.admincontacts');
+    Route::post('update/contacts/admincontacts', 'UpdateAdminContactUs')->name('update.admincontacts');
+    // Route::post('update/site/setting', 'UpdateSiteSetting')->name('update.site.setting');
+    // Route::get('/contacts/admincontactus', 'AdminContactUs')->name('contacts.admincontacts');
+    // Route::get('/updatecontacts/update/admincontactus', 'UpdateAdminContactUs')->name('update.admincontacts');
+
+    // Route::post('update/site/setting', 'UpdateSiteSetting')->name('update.site.setting');
 
  });
 
@@ -226,35 +292,53 @@ Route::controller(SettingController::class)->group(function(){
 
 
 
-
-
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
+Route::controller(ContactUsController::class)->group (function(){
+    Route::get('/contactus/contactus/', 'FrontContactUs')->name('contactus.contactus');
+     //Route::get('/contactus/contactus', 'AllContactUs')->name('contactus.all_contactus');
+});
 ///////////////////////// Property Type Route//////////////////////////////////////
 Route::get('/admin/login',[AdminController::class, 'AdminLogin'])
 ->name('admin.login');
 Route::controller(PropertyTypeController::class)->group(function(){
 // Alltype is the method
 //URL//FUNCTION//VIEW
-Route::get('/all/type', 'AllType')->name('all.type')->middleware('permission:all.type');
-Route::get('/add/type', 'AddType')->name('add.type')->middleware('permission:add.type');;
+Route::get('/all/type', 'AllType')->name('all.type');
+// ->middleware('permission:all.type');
+Route::get('/add/type', 'AddType')->name('add.type');
+// ->middleware('permission:add.type');
 Route::post('/store/type', 'StoreType')->name('store.type');
 Route::get('/edit/type{id}', 'EditType')->name('edit.type');
+Route::get('/category/type', 'CategoryType')->name('category.type');
 Route::post('/update/type', 'UpdateType')->name('update.type');
 Route::get('/delete/type{id}', 'DeleteType')->name('delete.type');
 });
+
+// Route::controller(CouraselController::class)->group(function(){
+//    Route::get('courasel.allcourasel', 'Courasel')->name('backend.courasel.allcourasel');
+//     Route::post('/update/courasel/', 'CouraselUpdate')->name('update.courasel');
+
+    //  aboutus.all_aboutus
+    //  Route::get('all/admin/aboutus/', 'AllAdminAboutUs')->name('aboutus.all_aboutus');
+    //  Route::post('all/admin/aboutus/', 'AdminUpdateAboutUs')->name('update.admin.aboutus');
+// });
+
+Route::controller(BannerController::class)->group(function(){
+Route::get('banner.all.banner', 'AllBanner')->name('banner.all.banner');
+Route::get('banner.add.banner', 'AddBanner')->name('add.banner' );
+Route::post('store.banner', 'StoreBanner')->name('store.banner' );
+Route::get('banner.edit/{id}', 'EditBanner')->name('edit.banner');
+Route::post('update.banner', 'UpdateBanner')->name('update.banner' );
+Route::get('delete/banner{id}', 'DeleteBanner')->name('delete.banner');
+
+
+
+
+
+});
+
+
 ///////////////////AMENITIES ALL ROUTE///////////////////////////////////////////////
 Route::controller(PropertyTypeController::class)->group(function(){
 
@@ -265,6 +349,18 @@ Route::get('/edit/amenities{id}', 'EditAmenities')->name('edit.amenities');
 Route::post('/update/amenities', 'UpdateAmenities')->name('update.amenities');
 Route::get('/delete/amenities{id}', 'DeleteAmenities')->name('delete.amenities');
 });
+Route::controller(ContactUsController::class)->group(function(){
+
+    Route::get('contacts/allcontacts', 'AllContacts')->name('contacts.all_contacts');
+    Route::get('/add/contacts', 'AddContacts')->name('add.contacts');
+    Route::post('/store/contacts', 'StoreContacts')->name('store.contacts');
+    Route::get('/edit/contacts/', 'EditContacts')->name('edit.contacts');
+    Route::post('/update/contacts/', 'UpdateContacts')->name('update.contacts');
+    Route::get('/delete/contacts/', 'DeleteContacts')->name('delete.contacts');
+
+
+    });
+    ////
 //////////////////////////////PERMISSION ALL ROUTE MIDDLEWARE//////////////////////////////////
 
 Route::controller(RoleController::class)->group(function(){
@@ -330,6 +426,10 @@ Route::controller(AdminController::class)->group(function(){
 ////////STATE AL ROUTE/////////////////////////
 
 
+
+
+
+
 Route::controller(StateController::class)->group(function(){
     Route::get('/all/state', 'AllState')->name
        ('all.state');
@@ -349,7 +449,6 @@ Route::controller(StateController::class)->group(function(){
 
 
 });
-
 
 
 
@@ -392,10 +491,27 @@ Route::controller(StateController::class)->group(function(){
 
 
 });
+// Route::controller(AgentController::class)->group(function(){
+//     Route::get('all/agents', 'AllAgents')->name('agent.allagents');
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //////////////////newbyy package/////////////////////
-
-
 Route::controller(AgentPropertyController::class)->group(function(){
     Route::get('/buy/package', 'BuyPackage')->name
        ('buy.package');
@@ -427,12 +543,39 @@ Route::controller(AgentPropertyController::class)->group(function(){
 ///////////////////frontend property details all route////////
 
 });
-//the route below is different because of the featured below
+
+/////////////////////////////ABOUTUS///////////////////////////////
+
+Route::controller(AboutUsController::class)->group(function(){
+ Route::get('aboutus/aboutus/','AboutUs')->name('aboutus.aboutus');
+//  aboutus.all_aboutus
+ Route::get('all/admin/aboutus/', 'AllAdminAboutUs')->name('aboutus.all_aboutus');
+ Route::post('all/admin/aboutus/', 'AdminUpdateAboutUs')->name('update.admin.aboutus');
+}
+);
+/////////////////SERVICES//////////////////////
+Route::controller(ServicesController::class)->group(function(){
+Route::get('admin/all/services/', 'AllAdminServices')->name('aboutus.all_services');
+Route::get('admin/add/services/', 'AddServices')->name('aboutus.add_services');
+Route::post('admin/store/services/', 'StoreServices')->name('store.services');
+Route::get('/edit/services{id}', 'EditServices')->name('edit.services');
+Route::post('/update/services', 'UpdateServices')->name('update.services');
+Route::get('/delete/services{id}', 'DeleteServices')->name('delete.services');
+
+
+}
+);
+
+
+
+///////////////////////////////////////////
+Route::post('/subscribe', [IndexController::class, 'Subscribers'])->name('subscribe');
+
 Route::get('/featuredproperty/details/{id}/{slug}', [IndexController::class, 'FeaturedPropertyDetails']);
 ////////////////wishlist route////////////////////////
 Route::post('/add-to-wishList/{property_id}', [WishlistController::class, 'AddToWishList']);
-// Route::post('/add-to-wishList/{property_id}', [WishlistController::class, 'AddToWishList']);
 Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);
+
 
 Route::post('/property/message', [IndexController::class,
  'PropertyMessage'])->name('property.message');
@@ -486,9 +629,11 @@ Route::get('/admin/comment/reply/{id}', [BlogController::class,
   Route::post('/store/schedule', [IndexController::class,
   'StoreSchedule'])->name('store.schedule');
   Route::post('/send-message', [ChatController::class,'SendMsg'])->name('send.msg');
-  Route::get('/user-all', [ChatController::class,'GetAllUsers'])->name('user.all');;
+  Route::get('/user-all', [ChatController::class,'GetAllUsers']);
+//   ->name('user.all');;
 //   ->name('send.msg');
 Route::get('/user-message/{id}', [ChatController::class,'UserMsgById']);
 // ->name('user.all');;
 
 Route::get('/agent/live/chat/', [ChatController::class,'AgentLiveChat'])->name('agent.live.chat');
+Route::get('/agent/all', [AgentController::class, 'AgentsFront'])->name('frontend.agent.allagent');

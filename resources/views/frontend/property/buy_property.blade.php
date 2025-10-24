@@ -32,12 +32,12 @@ Buy Property Keja Yangu
         <section class="property-page-section property-list">
             <div class="auto-container">
                 <div class="row clearfix">
-                    <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                    {{-- <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                         <div class="default-sidebar property-sidebar">
-                            <div class="filter-widget sidebar-widget">
-                                <div class="widget-title">
+                            <div class="filter-widget sidebar-widget"> --}}
+                                {{-- <div class="widget-title">
                                     <h5>Buy Property</h5>
-                                </div>
+                                </div> --}}
 
 
 
@@ -59,7 +59,7 @@ Buy Property Keja Yangu
     @csrf
 
 
-                                <div class="widget-content">
+                                {{-- <div class="widget-content">
                                     <div class="select-box">
                                         <select name="property_status" class="wide" >
                                            <option data-display="All Type">All Status</option>
@@ -71,10 +71,10 @@ Buy Property Keja Yangu
                                     </div>
                                     <div class="select-box">
                                         <select class="wide" name="ptype_id">
-                                           <option data-display="Type">Select Type</option>
+                                           <option data-display="Type">Select Type</option> --}}
                                            {{-- <option value="1">New York</option> --}}
 
-                                           @foreach($ptypes as $type)
+                                           {{-- @foreach($ptypes as $type)
                                            <option value="{{ $type->type_name }}">{{ $type->type_name }}</option>
                                            @endforeach
 
@@ -106,42 +106,23 @@ Buy Property Keja Yangu
                                         <button type="submit" class="theme-btn btn-one"><i class="fas fa-filter"></i>&nbsp;Filter</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="price-filter sidebar-widget">
+                            </div> --}}
+                            {{-- <div class="price-filter sidebar-widget">
                                 <div class="widget-title">
                                     <h5>Select Price Range</h5>
                                 </div>
                                 <div class="range-slider clearfix">
                                     <div class="clearfix">
                                         <div class="input">
-                                            <input type="text" class="property-amount" name="field-name" readonly="">
+                                            <input type="text" class="property-amount" name="field-name">
                                         </div>
                                     </div>
                                     <div class="price-range-slider"></div>
                                 </div>
-                            </div>
-                            {{-- <div class="category-widget sidebar-widget">
-                                <div class="widget-title">
-                                    <h5>Status Of Property</h5>
-                                </div>
-                                <ul class="category-list clearfix">
-                                    <ul class="category-list clearfix">
-                                        {{-- @$size = count((array)$_POST['adm_num'])); --}}
-                                        {{-- @$rentproperty = count((array)$_POST['rentproperty'])); --}}
-
-                                        {{-- <li><a href="{{ route('rent.property') }}">For Rent <span>{{ count($rentproperty) }}</span></a></li> --}}
-
-                                        {{-- <li><a href="{{ route('rent.property') }}">For Rent <span>{{ count($rentproperty) }}</span></a></li> --}}
-                                        {{-- <li><a href="">For Buy <span>67</span></a></li> --}}
-                                        {{-- if (is_countable($rentproperty) && count($rentproperty) > 0) : --}}
-                                        {{-- <li><a href="{{ route('rent.property') }}">For Rent <span>({{ count($rentproperty) }})</span></a></li> --}}
-                                    {{-- <li><a href="{{ route('buy.property') }}">For Buy <span>({{ count($buyproperty) }})</span></a></li> --}}
-                                    {{-- </ul>
                             </div> --}}
-
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                        {{-- </div>
+                    </div> --}}
+                    <div class="col-lg-12 col-md-12 col-sm-12 content-side">
                         <div class="property-content-side">
                             <div class="item-shorting clearfix">
                                 <div class="left-column pull-left">
@@ -201,7 +182,7 @@ Buy Property Keja Yangu
                                                         <div class="price-box clearfix">
                                                             <div class="price-info pull-left">
                                                                 <h6>Start From</h6>
-                                                                <h4>Ksh {{ $item->lowest_price }}</h4>
+                                            <h4>Ksh{{ number_format($item->lowest_price) }}</h4>
                                                             </div>
                                                             @if($item->agent_id == Null)
                                                             <div class="author-box pull-right">

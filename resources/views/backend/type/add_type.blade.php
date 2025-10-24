@@ -7,7 +7,7 @@
 <div class="page-content">
 
 
-      <!-- left wrapper end -->
+      <!-- left wrapper end --> 
       <!-- middle wrapper start -->
       <div class="col-md-8 col-xl-8 middle-wrapper">
         <div class="row">
@@ -27,7 +27,7 @@
                                                 <label for="exampleInputUsername1" class="form-label">Type Name</label>
                                                 <input type="text" name="type_name"
                                                 class="form-control @error ('type_name') is-invalid @enderror" id="type_name"
-                                                 autocomplete="off" placeholder="Type Name">
+                                                  placeholder="Type Name">
                                                  @error('type_name')
                                                  <span class="text-danger">{{message }}</span>
                                                  @enderror
@@ -36,7 +36,7 @@
                                                     <label for="exampleInputUsername1" class="form-label">Type Icon</label>
                                                     <input type="text" name="type_icon"
                                                     class="form-control @error ('type_icon') is-invalid @enderror" id="type_icon"
-                                                     autocomplete="off" placeholder="Type Icon">
+                                                      placeholder="Type Icon">
                                                      @error('type_icon')
                                                      <span class="text-danger">{{message }}</span>
                                                      @enderror

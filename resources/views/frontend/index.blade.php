@@ -68,7 +68,7 @@ Keja Yangu
 
 <!-- news-section end -->
 
-@include('frontend.home.download')
+{{-- @include('frontend.home.download') --}}
 
 <!-- download-section -->
 

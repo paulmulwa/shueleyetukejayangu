@@ -22,6 +22,9 @@ class AdminController extends Controller
     public function AdminDashboard(){
 return view('admin.index');
     }
+    public function AdminDashboardLight(){
+        return view('admin.index.light');
+            }
 
  public function AdminLogout(Request $request){
     {

@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h6 class="card-title" style="mb-10">EdirRoles</h6>
+                        <h6 class="card-title" style="mb-10">Edit Roles</h6>
 
                         <form id="myForm" method="POST" action="{{ route('update.roles') }}" class="forms-sample">
                             @csrf
@@ -22,7 +22,7 @@
                             <div class="form-group mb-3, mt-5">
                                 <label for="exampleInputUsername1" class="form-label">Role Name</label>
                                 <input type="text" value="{{ $roles->name }}" name="name" class="form-control" id="name"
-                                    autocomplete="off" placeholder="Role Name">
+                                     placeholder="Role Name">
                             </div>
 
 

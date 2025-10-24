@@ -17,9 +17,9 @@
                 <ul class="social-links clearfix">
                     <li><a href="{{ $setting->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="{{ $setting->twitter }}"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="{{ $setting->company_pintrest }}"><i class="fab fa-pinterest-p"></i></a></li>
-                    <li><a href="{{ $setting->company_address }}"><i class="fab fa-google-plus-g"></i></a></li>
-                    <li><a href="{{ $setting->company_address }}"><i class="fab fa-vimeo-v"></i></a></li>
+                    <li><a href="{{ $setting->company_pintrest }}"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="{{ $setting->company_address }}"><i class="fab fa-google"></i></a></li>
+                    <li><a href="{{ $setting->company_address }}"><i class="fab fa-whatsapp"></i></a></li>
                 </ul>
                 @auth
                 <div class="sign-box">
@@ -59,29 +59,28 @@
         {{-- <li class="current dropdown"><a href="{{ url('/') }}"><span>Home</span></a> --}}
             {{-- <ul> --}}
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('/') }}">About Us</a></li>
+                <li><a href="{{ url('aboutus/aboutus') }}">About Us</a></li>
 
 
-        <li class="dropdown"><a href="#"><span>Property</span></a>
+        {{-- <li class="dropdown"><a href="#"><span>Property</span></a>
             <ul>
                 <li><a href="{{ route('rent.property') }}">Buy</a></li>
                 <li><a href="{{ route('buy.property') }}">Rent</a></li>
 
             </ul>
+        </li> --}}
+        {{-- <li><a href="{{ route('blog.list') }}">Blog</a></li> --}}
+
+        <li><a href="{{ url('/agents/front_agents') }}">Agents</a></li>
         </li>
-        <li><a href="{{ route('blog.list') }}">Blog</a></li>
-
-        <li><a href="{{ url('/') }}">Agents</a></li>
-        </li>
-
-
-
+        {{-- frontend.agents.front_agents' --}}
+        {{-- frontend.agent.allagents --}}
 {{-- ////////////////// --}}
 
 
 
-                <li><a href="{{ route('rent.property') }}">Buy</a></li>
-                <li><a href="{{ route('buy.property') }}">Rent</a></li>
+                <li><a href="{{ route('rent.property') }}">Rent</a></li>
+                <li><a href="{{ route('buy.property') }}">Buy</a></li>
 
 
 
@@ -109,12 +108,12 @@
 
 
 
-        <li><a href="contact.html"><span>Contact</span></a></li>
+        <li><a href="{{ route('contactus.contactus') }}"><span>Contact</span></a></li>
         <li>
             {{-- <a href="contact.html"><span>Contact</span></a> --}}
             <div class="btn-box">
 
-                <a href="{{ route('login') }}" class="btn btn-success"><span>+</span>Add Listing</a>
+                {{-- <a href="{{ route('login') }}" class="btn btn-success"><span>+</span>Add Listing</a> --}}
 
         </li>
     </div>

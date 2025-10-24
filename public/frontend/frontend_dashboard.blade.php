@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<title>Realshed - HTML 5 Template Preview</title>
+<title>Keja Yangu</title>
 
 <!-- Fav Icon -->
 <link rel="icon" href="{{asset('frontend/assets/images/favicon.ico')}}" type="image/x-icon">
@@ -36,44 +36,7 @@
     <div class="boxed_wrapper">
 
 
-        <!-- preloader -->
-        <div class="loader-wrap">
-            <div class="preloader">
-                <div class="preloader-close"><i class="far fa-times"></i></div>
-                <div id="handle-preloader" class="handle-preloader">
-                    <div class="animation-preloader">
-                        <div class="spinner"></div>
-                        <div class="txt-loading">
-                            <span data-text-preloader="r" class="letters-loading">
-                                r
-                            </span>
-                            <span data-text-preloader="e" class="letters-loading">
-                                e
-                            </span>
-                            <span data-text-preloader="a" class="letters-loading">
-                                a
-                            </span>
-                            <span data-text-preloader="l" class="letters-loading">
-                                l
-                            </span>
-                            <span data-text-preloader="s" class="letters-loading">
-                                s
-                            </span>
-                            <span data-text-preloader="h" class="letters-loading">
-                                h
-                            </span>
-                            <span data-text-preloader="e" class="letters-loading">
-                                e
-                            </span>
-                            <span data-text-preloader="d" class="letters-loading">
-                                d
-                            </span>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-        </div>
-        <!-- preloader end -->
+
 
 
         <!-- switcher menu -->
@@ -101,7 +64,7 @@
                             <a href="javascript: void(0)" data-theme="orange" class="orange-color"></a>
                         </li>
                     </ul>
-                </div> 
+                </div>
             </div>
         </div>
         <!-- end switcher menu -->
@@ -150,7 +113,7 @@
                                                 <li><a href="agents-grid.html">Agents Grid</a></li>
                                                 <li><a href="agents-details.html">Agent Details</a></li>
                                             </ul>
-                                        </li> 
+                                        </li>
                                         <li class="dropdown"><a href="index.html"><span>Property</span></a>
                                             <ul>
                                                 <li><a href="property-list.html">Property List</a></li>
@@ -206,10 +169,10 @@
                                                             <li><a href="agency-details.html">Agency Details</a></li>
                                                             <li><a href="contact.html">Contact Us</a></li>
                                                         </ul>
-                                                    </div>                                   
-                                                </div>                                        
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </li> 
+                                        </li>
                                         <li class="dropdown"><a href="index.html"><span>Agency</span></a>
                                             <ul>
                                                 <li><a href="agency-list.html">Agency List</a></li>
@@ -224,8 +187,8 @@
                                                 <li><a href="blog-3.html">Blog 03</a></li>
                                                 <li><a href="blog-details.html">Blog Details</a></li>
                                             </ul>
-                                        </li>  
-                                        <li><a href="contact.html"><span>Contact</span></a></li>   
+                                        </li>
+                                        <li><a href="contact.html"><span>Contact</span></a></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -267,7 +230,7 @@
         <div class="mobile-menu">
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
-            
+
             <nav class="menu-box">
                 <div class="nav-logo"><a href="index.html"><img src="{{ asset('frontend/assets/images/logo-2.png')}}" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
@@ -301,7 +264,7 @@
                         <div class="content-box">
                             <h2>Search Properties for Sale and To Rent</h2>
                             <p>Amet consectetur adipisicing elit sed do eiusmod.</p>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="slide-item">
@@ -310,7 +273,7 @@
                         <div class="content-box">
                             <h2>Search Properties for Sale and To Rent</h2>
                             <p>Amet consectetur adipisicing elit sed do eiusmod.</p>
-                        </div>   
+                        </div>
                     </div>
                 </div>
                 <div class="slide-item">
@@ -319,7 +282,7 @@
                         <div class="content-box">
                             <h2>Search Properties for Sale and To Rent</h2>
                             <p>Amet consectetur adipisicing elit sed do eiusmod.</p>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>
@@ -852,7 +815,7 @@
                                                     <h4>$30,000.00</h4>
                                                 </div>
                                                 <div class="author-box pull-right">
-                                                    <figure class="author-thumb"> 
+                                                    <figure class="author-thumb">
                                                         <img src="{{ asset('frontend/assets/images/feature/author-1.jpg')}}" alt="">
                                                         <span>Michael Bean</span>
                                                     </figure>
@@ -898,7 +861,7 @@
                                                     <h4>$40,000.00</h4>
                                                 </div>
                                                 <div class="author-box pull-right">
-                                                    <figure class="author-thumb"> 
+                                                    <figure class="author-thumb">
                                                         <img src="{{asset('frontend/assets/images/feature/author-2.jpg')}}" alt="">
                                                         <span>Robert Niro</span>
                                                     </figure>
@@ -944,7 +907,7 @@
                                                     <h4>$50,000.00</h4>
                                                 </div>
                                                 <div class="author-box pull-right">
-                                                    <figure class="author-thumb"> 
+                                                    <figure class="author-thumb">
                                                         <img src="{{ asset('frontend/assets/images/feature/author-3.jpg')}}" alt="">
                                                         <span>Keira Mel</span>
                                                     </figure>
@@ -990,7 +953,7 @@
                                                     <h4>$30,000.00</h4>
                                                 </div>
                                                 <div class="author-box pull-right">
-                                                    <figure class="author-thumb"> 
+                                                    <figure class="author-thumb">
                                                         <img src="{{ asset('frontend/assets/images/feature/author-1.jpg')}}" alt="">
                                                         <span>Michael Bean</span>
                                                     </figure>
@@ -1040,7 +1003,7 @@
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="icon-19"></i></div>
                                     <h4>Excellent Reputation</h4>
-                                    <p>Lorem ipsum dolor sit consectetur sed eiusm tempor.</p>
+                                    <p>Keja Yangu boasts an intuitive and user-friendly interface, making property search and navigation seamless for both buyers and sellers</p>
                                 </div>
                             </div>
                         </div>

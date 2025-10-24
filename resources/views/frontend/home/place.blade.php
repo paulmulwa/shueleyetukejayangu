@@ -31,7 +31,7 @@
         <div class="sec-title centred">
             <h5>Top Places</h5>
             <h2>Most Popular Places</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing sed do eiusmod tempor incididunt <br />labore dolore magna aliqua enim.</p>
+            <p>Keja Yangu also showcases emerging hotspots that are on the rise in popularity<br />For those prioritizing peace and tranquility without sacrificing convenience, suburban neighborhoods offer an ideal retreat</p>
         </div>
         <div class="sortable-masonry">
             <div class="items-container row clearfix">

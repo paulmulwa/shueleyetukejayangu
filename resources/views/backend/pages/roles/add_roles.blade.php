@@ -21,7 +21,7 @@
                             <div class="form-group mb-3, mt-5">
                                 <label for="exampleInputUsername1" class="form-label">Role Name</label>
                                 <input type="text" name="name" class="form-control" id="name"
-                                    autocomplete="off" placeholder="Role Name">
+                                    placeholder="Role Name">
                             </div>
 
 

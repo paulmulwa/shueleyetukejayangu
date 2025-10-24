@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-        Agent<span>Learning</span>
+        Keja<span>Yangu</span>
         </a>
         <div class="sidebar-toggler not-active">
             <span></span>
@@ -21,7 +21,7 @@
             </li>
             {{-- @if($status === 'active') --}}
 
-            <li class="nav-item nav-category">Real Estate</li>
+            <li class="nav-item nav-category">Keja Yangu</li>
             {{-- <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false"
                     aria-controls="emails">

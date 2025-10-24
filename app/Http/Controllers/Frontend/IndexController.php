@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\User;
-use App\Models\State;
-
-// use App\Models\User;
-// use App\Models\Facility;
+use App\Http\Controllers\Controller;
 use App\Models\Facility;
-use App\Models\Property;
-use App\Models\Schedule;
+
+// use App\Models\Facility;
 use App\Models\MultiImage;
+use App\Models\Property;
+use App\Models\PropertyMessage;
 use App\Models\PropertyType;
+use App\Models\Schedule;
+use App\Models\State;
+use App\Models\Subscribers;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use App\Models\PropertyMessage;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 //use App\Http\Controllers\Frontend\IndexController;
 // use App\Models\Amenities;
@@ -302,6 +302,19 @@ return redirect()->back()->with($notification);
 
 }
 }
+
+
+public function subscribe(Request $request){
+         Subscribers::insert([
+        'email'=> $request->email,
+         ]);
+
+         $notification = array(
+            'message' => 'User Subscribed Succesffully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
 
 
 

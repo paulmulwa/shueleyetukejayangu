@@ -59,15 +59,15 @@
                             <li><a href="property-details.html">{{ $property->property_status }}</a></li>
                         </ul>
                         <div class="price-box pull-right">
-                            <h3>Ksh {{ $property->lowest_price }}</h3>
+                        <h3>Ksh{{ number_format($property->lowest_price) }}</h3>
                         </div>
                     </div>
-                    <ul class="other-option pull-right clearfix">
+                    {{-- <ul class="other-option pull-right clearfix">
                         <li><a href="property-details.html"><i class="icon-37"></i></a></li>
                         <li><a href="property-details.html"><i class="icon-38"></i></a></li>
                         <li><a href="property-details.html"><i class="icon-12"></i></a></li>
                         <li><a href="property-details.html"><i class="icon-13"></i></a></li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
             <div class="row clearfix">
@@ -106,10 +106,7 @@
                             </div>
                             <ul class="list clearfix">
                                 <li>Property Type: <span>{{ $property->type->type_name }}</span></li>
-                                {{-- <li>Rooms: <span>{{ $property->rooms }}</span></li> --}}
-                                <li>Property Price: <span>Ksh {{ $property->lowest_price }}</span></li>
 
-                                {{-- <li>State: <span>{{ $property['pstate']['state_name'] }}</span></li> --}}
 
                                 <li>Bathrooms: <span>{{ $property->bathrooms }}</span></li>
                                 <li>Property Status: <span>{{ $property->property_status }}</span></li>
@@ -307,8 +304,8 @@
                                             ? url('uploads/agent_images/'.$property->user->photo)
                                             : url('uploads/agent_images/no_image.jpg' )}}"
                                             alt="profile" style="width:300px; height:350px;">
-        
-                                    </figure>      
+
+                                    </figure>
 
 
 
@@ -330,9 +327,9 @@
                                         <div id="app">
                                             <send-message></send-message>
                                                                      </div>
-                                        
+
                                         <div class="btn-box"><a href="agents-details.html">View Listing</a></div>
-                                    
+
                                     </div>
                             </div>
                         @else
@@ -456,69 +453,7 @@
                         </div>
                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="calculator-widget sidebar-widget">
-                        <div class="calculate-inner">
-                            <div class="widget-title">
-                                <h4>Mortgage Calculator</h4>
-                            </div>
-                            <form method="post" action="mortgage-calculator.html" class="default-form">
-                                <div class="form-group">
-                                    <i class="fas fa-dollar-sign"></i>
-                                    <input type="number" name="total_amount" placeholder="Total Amount">
-                                </div>
-                                <div class="form-group">
-                                    <i class="fas fa-dollar-sign"></i>
-                                    <input type="number" name="down_payment" placeholder="Down Payment">
-                                </div>
-                                <div class="form-group">
-                                    <i class="fas fa-percent"></i>
-                                    <input type="number" name="interest_rate" placeholder="Interest Rate">
-                                </div>
-                                <div class="form-group">
-                                    <i class="far fa-calendar-alt"></i>
-                                    <input type="number" name="loan" placeholder="Loan Terms(Years)">
-                                </div>
-                                <div class="form-group">
-                                    <div class="select-box">
-                                        <select class="wide">
-                                            <option data-display="Monthly">Monthly</option>
-                                            <option value="1">Yearly</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group message-btn">
-                                    <button type="submit" class="theme-btn btn-one">Calculate Now</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+        </div>
             </div>
         </div>
         <div class="similar-content">
@@ -542,7 +477,9 @@
                                         <div class="author pull-left">
                                             {{-- <figure class="author-thumb"><img src="{{asset('frontend/assets/images/feature/author-1.jpg')}}" alt=""></figure> --}}
                                             {{-- <h6>{{ $item->property_name }}</h6> --}}
-                                            <h6>{{ $item->property_name }}</h6>
+                                            {{-- <h6>{{ $item->property_name }}</h6> --}}
+                             <h6><a href="{{ url('featuredproperty/details/'.$item->id.'/.'.$item->property_name) }}">{{ $item->property_name }}</a></h6>
+
 
                                         </div>
                                         <div class="buy-btn pull-right"><a

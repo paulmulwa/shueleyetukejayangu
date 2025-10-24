@@ -59,7 +59,7 @@ if($request->file('image')){
 
     $image = $request->file('image');
     $name_gen = hexdec(uniqid()). '.'.$image->getClientOriginalExtension();
-    Image::make($image)->resize(370,250)->save('uploads/testimonials/'.$name_gen);
+    Image::make($image)->resize(500,500)->save('uploads/testimonials/'.$name_gen);
     $save_url = 'uploads/testimonials/'.$name_gen;
 
 Testimonial::findOrFail($test_id)->update([

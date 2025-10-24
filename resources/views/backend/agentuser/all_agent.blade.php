@@ -50,8 +50,7 @@
                       <tr>
                         <td>{{$key+1}}</td>
                         <td>
-                    <img class="wd-100 rounded-circle" src="{{ (!empty($item->photo)) ?
-                    url('uploads/agent_images/'.$item->photo) : url('uploads/agent_images/no_image.jpg') }}"
+                    <img class="wd-100 rounded-circle" src="{{ (!empty($item->photo)) ? url('uploads/agent_images/'.$item->photo) : url('uploads/agent_images/no_image.jpg') }}"
                     alt="profile" style="width:70px; height:40px;">
                     {{-- <span class="h4 ms-3">{{$profileData->username}}</span> --}}
                   </td>

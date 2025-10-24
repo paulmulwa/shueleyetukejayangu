@@ -40,7 +40,6 @@
                         <td> <img src="{{ asset($item->property_thumbmail) }}"
                          style="width: 120px; height:100px;"></td>
                         <td>{{ $item->property_name}}</td>
-                        {{-- <td>{{ $item['type_name'] }}</td> --}}
                         {{-- $qlinks[$link->id] = array();   // extra line to initialise sub-array --}}
                       {{-- <td>{{ $item['type'  ]['typename']??null}}</td> --}}
                       {{-- <td>{{ $item['type']['typename'] ??'none'}}</td> --}}

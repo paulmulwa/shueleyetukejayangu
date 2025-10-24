@@ -82,6 +82,7 @@ return view('agent.agent_login');
                 $data->name = $request->name;
                 $data->email = $request->email;
                 $data->phone = $request->phone;
+
                 $data->address = $request->address;
                 // $data->agent_descp = $request->agent_descp ;
 
@@ -145,7 +146,12 @@ return view('agent.agent_login');
         return back()->with($notification);
 
         }
+        public function FrontAllAgents()
+        {
+            $allagent = User::where('role', 'agent')->get();
+            return view('frontend.agents.front_agents', compact('allagent'));
 
+        }
 
         }
 
@@ -177,4 +183,3 @@ return view('agent.agent_login');
 
 
 //}
-

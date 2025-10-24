@@ -12,8 +12,9 @@ Rent Property Keja Yangu
 
 <section class="page-title-two bg-color-1 centred">
     <div class="pattern-layer">
-        <div class="pattern-1" style="background-image: url(assets/images/shape/shape-9.png);"></div>
-        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-10.png);"></div>
+        <div class="pattern-1" style="background-image: url({{asset('frontend/assets/images/shape/shape-9.png')}})"></div>
+        <div class="pattern-2" style="background-image: url({{asset('frontend/assets/images/shape/shape-10.png')}})"></div>
+    </div>
     </div>
     <div class="auto-container">
         <div class="content-box clearfix">
@@ -32,12 +33,12 @@ Rent Property Keja Yangu
         <section class="property-page-section property-list">
             <div class="auto-container">
                 <div class="row clearfix">
-                    <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                        <div class="default-sidebar property-sidebar">
-                            <div class="filter-widget sidebar-widget">
-                                <div class="widget-title">
+                    {{-- <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side"> --}}
+                        {{-- <div class="default-sidebar property-sidebar"> --}}
+                            {{-- <div class="filter-widget sidebar-widget"> --}}
+                                {{-- <div class="widget-title">
                                     <h5>Property</h5>
-                                </div>
+                                </div> --}}
 
 
 
@@ -59,7 +60,7 @@ Rent Property Keja Yangu
     @csrf
 
 
-                                <div class="widget-content">
+                                {{-- <div class="widget-content">
                                     <div class="select-box">
                                         <select name="property_status" class="wide" >
                                            <option data-display="All Type">All Status</option>
@@ -68,11 +69,11 @@ Rent Property Keja Yangu
 
 
                                         </select>
-                                    </div>
-                                    <div class="select-box">
+                                    </div> --}}
+                                    {{-- <div class="select-box">
                                         <select class="wide" name="ptype_id">
                                            <option data-display="Type">Select Type</option>
-                                           {{-- <option value="1">New York</option> --}}
+                                           <option value="1">New York</option>
 
                                            @foreach($ptypes as $type)
                                            <option value="{{ $type->type_name }}">{{ $type->type_name }}</option>
@@ -82,49 +83,32 @@ Rent Property Keja Yangu
 
 
                                         </select>
-                                    </div>
-                                    <div class="select-box">
+                                    </div>  --}}
+                                    {{-- <div class="select-box">
                                         <select class="wide" name="state">
                                            <option data-display="state">Select State</option>
                                            @foreach($states as $state)
                                            <option value="{{ $state->state_name }}">{{ $state->state_name }}</option>
                                            @endforeach
                                         </select>
-                                    </div>
-                                    <div class="select-box">
-                                        <select name="bedrooms"
-                                class="wide">
-                                           <option data-display="bedrooms">Max BedRooms</option>
-                                           <option value="1">2+ BedRooms</option>
-                                           <option value="2">3+ BedRooms</option>
-                                           <option value="3">4+ BedRooms</option>
-                                           <option value="4">5+ BedRooms</option>
-                                        </select>
-                                    </div>
+                                    </div> --}}
 
-                                    <div class="filter-btn">
+
+                                    {{-- <div class="filter-btn">
                                         <button type="submit" class="theme-btn btn-one"><i class="fas fa-filter"></i>&nbsp;Filter</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="price-filter sidebar-widget">
                                 <div class="widget-title">
-                                    <h5>Select Price Range</h5>
                                 </div>
-                                <div class="range-slider clearfix">
-                                    <div class="clearfix">
-                                        <div class="input">
-                                            <input type="text" class="property-amount" name="field-name" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="price-range-slider"></div>
-                                </div>
+
                             </div>
 
 
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                        </div> --}}
+                    {{-- </div> --}}
+                    <div class="col-lg-12 col-md-12 col-sm-12 content-side">
                         <div class="property-content-side">
                             <div class="item-shorting clearfix">
                                 <div class="left-column pull-left">
@@ -278,34 +262,6 @@ Rent Property Keja Yangu
 
 
         <!-- subscribe-section -->
-
-
-
-
-
-        {{-- <section class="subscribe-section bg-color-3">
-            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <div class="col-lg-6 col-md-6 col-sm-12 text-column">
-                        <div class="text">
-                            <span>Subscribe</span>
-                            <h2>Sign Up To Our Newsletter To Get The Latest News And Offers.</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 form-column">
-                        <div class="form-inner">
-                            <form action="contact.html" method="post" class="subscribe-form">
-                                <div class="form-group">
-                                    <input type="email" name="email" placeholder="Enter your email" required="">
-                                    <button type="submit">Subscribe Now</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
 
 
 

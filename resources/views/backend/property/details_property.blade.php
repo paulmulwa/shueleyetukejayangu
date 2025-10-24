@@ -9,7 +9,7 @@
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Property Details</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Basic Tables</li>
+                <li class="breadcrumb-item active" aria-current="page">Property Details</li>
             </ol>
         </nav>
 
@@ -98,7 +98,7 @@
             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h6 class="card-title">Hoverable Table</h6>
+                        <h6 class="card-title">Property Details</h6>
                         <p class="text-muted mb-3">Add class <code>.table-hover</code></p>
                         <div class="table-responsive">
                             <table class="table table-striped">
@@ -120,9 +120,9 @@
                                         <td><code>{{ $property->neighborhood }}</code></td>
                                     </tr>
                                     <tr>
-                                        <td>State</td>
+                                        {{-- <td>State</td> --}}
                                         {{-- <td><code>{{ $property['state']['state_name'] }}</code></td> --}}
-                                        <td><code>{{ $property['state']['state_name'] }}</code></td>
+                                        {{-- <td><code>{{ $property['state']['state_name'] }}</code></td> --}}
 
                                     </tr>
 

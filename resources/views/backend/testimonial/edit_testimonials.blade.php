@@ -18,7 +18,7 @@
                                 </h6>
 
                                 <form method="POST" action="{{route('update.testimonials')}}"
-                               
+
                                 class="forms-sample" enctype="multipart/form-data">
                                     @csrf
 {{-- //////To access state table id --}}
@@ -40,7 +40,7 @@
                                                         ->message }}" name="message"
                                                     class="form-control"
                                                       placeholder="Message">
-    
+
                                                     </div>
                                             <div class="mb-3, mt-5">
                                                 <label for="exampleInputUsername1" class="form-label">Position</label>
@@ -72,8 +72,7 @@
                                                     </label>
 
                             <img id="showImage" class="wd-80 rounded-circle"
-                {{-- src="{{ (!empty($profileData->photo)) ? --}}
-                        {{-- // url('uploads/admin_images/'.$profileData->photo)  --}}
+
                        src="{{ asset($testimonials->image) }}" alt="profile">
                                                 </div>
 

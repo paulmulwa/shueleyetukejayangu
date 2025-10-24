@@ -39,12 +39,70 @@
                                 <input type="text" name="address" class="form-control"
                                     autocomplete="off" placeholder="Agent Address" value="{{$allagent->address}}">
                             </div>
-                            
+
+<div class="form-group mb-3, mt-5">
+
+                                                    <label for="exampleInputPassword1" class="form-label"> Photo</label>
+                                                    <input type="file" name="image" class="form-control" id="image" >
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="exampleInputPassword1" class="form-label">
+                                                    </label>
+
+                             <img id="showImage" class="wd-80 rounded-circle"
+
+                       src="{{ asset($allagent->image) }}" alt="profile">
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-primary me-2">Submit</button>
                             </div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#image').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e)
+            {
+                $('#showImage').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        });
+
+    });
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <script type="text/javascript">
                                 $(document).ready(function() {
                                     $('#myForm').validate({
@@ -106,4 +164,3 @@
                                 });
                             </script>
                         @endsection
-  

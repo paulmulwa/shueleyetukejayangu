@@ -2,7 +2,11 @@
 @section('main')
 @yield('title')
 
+@php
+    $state = App\Model\State::get();
+    $ptype = App\Model\PropertyType::get();
 
+@endphp
 
 
 
@@ -54,12 +58,13 @@
                                         </select>
                                     </div>
                                     <div class="select-box">
+                                        @foreach ($state as $st )
+
                                         <select class="wide">
                                            <option data-display="This Area Only">This Area Only</option>
-                                           <option value="1">New York</option>
-                                           <option value="2">California</option>
-                                           <option value="3">London</option>
-                                           <option value="4">Maxico</option>
+                                           <option value="1">{{ $st->state_name }}</option>
+                                           @endforeach
+
                                         </select>
                                     </div>
                                     <div class="select-box">
@@ -105,25 +110,6 @@
                                     <div class="price-range-slider"></div>
                                 </div>
                             </div>
-                            {{-- <div class="category-widget sidebar-widget">
-                                <div class="widget-title">
-                                    <h5>Status Of Property</h5>
-                                </div>
-                                <ul class="category-list clearfix">
-                                    <ul class="category-list clearfix">
-                                        {{-- @$size = count((array)$_POST['adm_num'])); --}}
-                                        {{-- @$rentproperty = count((array)$_POST['rentproperty'])); --}}
-
-                                        {{-- <li><a href="{{ route('rent.property') }}">For Rent <span>{{ count($rentproperty) }}</span></a></li> --}}
-
-                                        {{-- <li><a href="{{ route('rent.property') }}">For Rent <span>{{ count($rentproperty) }}</span></a></li> --}}
-                                        {{-- <li><a href="">For Buy <span>67</span></a></li> --}}
-                                        {{-- if (is_countable($rentproperty) && count($rentproperty) > 0) : --}}
-                                        {{-- <li><a href="{{ route('rent.property') }}">For Rent <span>({{ count($rentproperty) }})</span></a></li> --}}
-                                    {{-- <li><a href="{{ route('buy.property') }}">For Buy <span>({{ count($buyproperty) }})</span></a></li> --}}
-                                    {{-- </ul>
-                            </div> --}}
-
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-12 col-sm-12 content-side">
@@ -175,10 +161,11 @@
 
                                                         @endif
                                                         {{-- <span class="category">Featured</span> --}}
-                                                        <div class="buy-btn pull-right"><a href="property-details.html">{{ $item->property_status }}</a></div>
+                                            <div class="buy-btn pull-right"><a href="property-details.html">{{ $item->property_status }}</a></div>
                                                     </div>
                                                     <div class="lower-content">
                                                         <div class="title-text"><h4>
+
                                     {{-- <a href="{{ url('featuredproperty/details/'.$item->id.'/.'.$item->property_slug) }}"
                                                             class="theme-btn btn-two">See Details --}}
                                                             {{ $item->property_name }}

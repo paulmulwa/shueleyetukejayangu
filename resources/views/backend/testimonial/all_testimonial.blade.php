@@ -36,7 +36,7 @@
                         <td>{{$key+1}}</td>
                         <td>{{ $item->name}}</td>
                         <td>{{ $item->position}}</td>
-                    {{-- <td>{{ $item->message}}</td> --}}
+                    <td>{{ $item->message}}</td>
 
 
             <td> <img src="{{ asset($item->image) }}"

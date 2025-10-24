@@ -1,8 +1,7 @@
 
 @php
 
-$property = App\Models\Property::where('status', '1')->where('featured','1')->limit(6)->get();
-//getting featured product where status and featured item is active
+$property = App\Models\Property::where('status', '1')->where('featured','1')->latest()->limit(6)->get();
 
 @endphp
 
@@ -15,15 +14,15 @@ $property = App\Models\Property::where('status', '1')->where('featured','1')->li
 
     <div class="auto-container">
         <div class="sec-title centred">
-            <h5>Features</h5>
+            <h5>Featured</h5>
             <h2>Featured Property</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing sed do eiusmod tempor incididunt <br />labore dolore magna aliqua enim.</p>
+            <p>Explore Our Diverse Property Portfolio<br /> Keja Yangu serves as a spotlight for select properties that stand out due to their unique features, exceptional value, or prime location</p>
         </div>
 <div class="row clearfix">
 @foreach ($property as $item )
             <div class="col-lg-4 col-md-6 col-sm-12 feature-block mt-3">
                 <div class="feature-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
+                    <div class="inner-box"><a href="{{ url('featuredproperty/details/'.$item->id.'/.'.$item->property_name) }}">
                         <div class="image-box">
                             <figure class="image"><img src="{{asset($item->property_thumbmail)}}" alt=""></figure>
                             <div class="batch"><i class="icon-11"></i></div>
@@ -32,18 +31,18 @@ $property = App\Models\Property::where('status', '1')->where('featured','1')->li
                         <div class="lower-content">
                             <div class="author-info clearfix">
                                 <div class="author pull-left">
-                                    {{-- <figure class="author-thumb"><img src="{{asset('frontend/assets/images/feature/author-1.jpg')}}" alt=""></figure> --}}
-                                    {{-- <h6>{{ $item->property_name }}</h6> --}}
-                                    <h6>{{ $item->property_name }}</h6>
+
+                                <h6><a href="{{ url('featuredproperty/details/'.$item->id.'/.'.$item->property_name) }}">{{ $item->property_name }}</a></h6>
+
 
                                 </div>
-                                <div class="buy-btn pull-right"><a href="property-details.html">{{ $item->property_status }}</a></div>
+                                <div class="buy-btn pull-right"><a href="{{ url('featuredproperty/details/'.$item->id.'/.'.$item->property_name) }}">{{ $item->property_status }}</a></div>
                             </div>
-                            <div class="title-text"><h4><a href="property-details.html">{{ $item->city }}</a></h4></div>
+                            <div class="title-text"><h4><a href="{{ url('featuredproperty/details/'.$item->id.'/.'.$item->city) }}">{{ $item->city }}</a></h4></div>
                             <div class="price-box clearfix">
                                 <div class="price-info pull-left">
                                     <h6>Start From</h6>
-                                    <h4>Ksh{{ $item->lowest_price }}</h4>
+                                    <h4>Ksh{{ number_format($item->lowest_price) }}</h4>
                                 </div>
                                 <ul class="other-option pull-right clearfix">
                                     <li><a aria-label="Compare" class="action-btn"
@@ -71,6 +70,6 @@ $property = App\Models\Property::where('status', '1')->where('featured','1')->li
         </div>
         @endforeach
 
-        <div class="more-btn centred"><a href="property-list.html" class="theme-btn btn-one">View All Listing</a></div>
+        <div class="more-btn centred"><a href="{{ route('rent.property') }}" class="theme-btn btn-one">View All Listing</a></div>
     </div>
 </section>

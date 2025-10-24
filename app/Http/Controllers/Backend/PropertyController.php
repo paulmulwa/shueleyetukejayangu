@@ -252,7 +252,6 @@ public function PropertyMultiImageDelete($id){
         $make_name = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
         Image::make($image)->resize(770,520)->save('uploads/property/multi-image/'.$make_name);
         $uploadPath = 'uploads/property/multi-image/'.$make_name;
-
         MultiImage::insert([
             'property_id' => $new_multi,
             'photo_name' => $uploadPath,
@@ -287,7 +286,7 @@ public function PropertyMultiImageDelete($id){
     }
 }
 $notification = array(
-    'message' => 'Faciity Inserted Succesffully',
+    'message' => 'Facility Inserted Succesffully',
     'alert-type' => 'success'
 );
 return redirect()->route('all.property')->with($notification);

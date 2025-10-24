@@ -62,8 +62,10 @@ $notification = array(
 );
 return redirect()->back()->with($notification);
 }
-
-
+public function CategoryType(){
+$cat = PropertyType::latest()->get();
+return view('frontend.categories.all_categories', compact('cat'));
+}
 /////////////////AMENITIES ALL ////////////////////////////////////////
 
 public function AllAmenities(){

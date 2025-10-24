@@ -11,11 +11,11 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget about-widget">
                         <div class="widget-title">
-                            <h3>About</h3>
+                            <h3>About Us</h3>
                         </div>
                         <div class="text">
-                            <p>Lorem ipsum dolor amet consetetur adi pisicing elit sed eiusm tempor in cididunt ut labore dolore magna aliqua enim ad minim venitam</p>
-                            <p>Quis nostrud exercita laboris nisi ut aliquip commodo.</p>
+                            <p>At Keja Yangu, we are dedicated to redefining the real estate experience for our clients.
+                            Whether you're buying, selling, renting, or investing, we understand the significance of these decisions and are here to support you every step of the way.</p>
                         </div>
                     </div>
                 </div>
@@ -26,12 +26,12 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list class">
-                                <li><a href="index.html">About Us</a></li>
-                                <li><a href="index.html">Listing</a></li>
-                                <li><a href="index.html">How It Works</a></li>
-                                <li><a href="index.html">Our Services</a></li>
-                                <li><a href="index.html">Our Blog</a></li>
-                                <li><a href="index.html">Contact Us</a></li>
+                                <li><a href="{{ url('/') }}">Home</a></li>
+                                <li><a href="{{ url('aboutus/aboutus') }}">About Us</a></li>
+                                <li><a href="{{ route('rent.property') }}">Buy</a></li>
+                                <li><a href="{{ route('buy.property') }}">Rent</a></li>
+                                <li><a href="{{ url('/agents/front_agents') }}">Agents</a></li>
+                                <li><a href="{{ route('contactus.contactus') }}"><span>Contact</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                         <div class="post-inner">
                             @foreach($blog as $item)
                             <div class="post">
-                                <figure class="post-thumb"><a href="blog-details.html"><img src="{{asset($item->post_image)}}" alt=""></a></figure>
+                                <figure class="post-thumb"><a href="{{url('blog/details/'.$item->post_slug)}}"><img src="{{asset($item->post_image)}}" alt=""></a></figure>
                                 <h5><a href="{{url('blog/details/'.$item->post_slug)}}">{{$item->post_title}}</a></h5>
                                 <p>{{ $item->created_at->format('M d Y') }}</p>
                             </div>
@@ -72,7 +72,7 @@
     <div class="footer-bottom">
         <div class="auto-container">
             <div class="inner-box clearfix">
-                <figure class="footer-logo"><a href="index.html"><img src="{{asset('frontend/assets/images/footer-logo.png')}}" alt=""></a></figure>
+                <figure class="footer-logo"><a href="{{ url('/') }}"><img src="{{asset('frontend/assets/images/footer-logo3.png')}}" alt=""></a></figure>
                 <div class="copyright pull-left">
                     {{-- <p><a href="index.html">Keja Yangu</a> &copy; 2023 All Right Reserved</p> --}}
                     <p><a href="{{ url('/') }}">{{ $setting->copyright }}</a> </p>

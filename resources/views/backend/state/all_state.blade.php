@@ -4,7 +4,7 @@
 
 				<nav class="page-breadcrumb">
 					<ol class="breadcrumb">
-                <a href= {{route('add.state')}} class= "btn btn-inverse-info">Add State</a>
+                <a href= {{route('add.state')}} class= "btn btn-inverse-info">Add County</a>
 
 
 
@@ -15,14 +15,14 @@
 					<div class="col-md-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h6 class="card-title">State Type All</h6>
+                <h6 class="card-title">County</h6>
                 <div class="table-responsive">
                   <table id="dataTableExample" class="table">
                     <thead>
                       <tr>
                         <th>SI</th>
-                        <th>State Image</th>
-                        <th>State Name</th>
+                        <th>Property Image</th>
+                        <th>County</th>
                         <th>Action</th>
                         {{-- <th>Start date</th>
                         <th>Salary</th> --}}
@@ -32,9 +32,10 @@
                     @foreach($state as $key => $item)
                       <tr>
                         <td>{{$key+1}}</td>
-                        <td>{{ $item->state_name}}</td>
                         <td> <img src="{{ asset($item->state_image) }}"
                          style="width: 70px; height:40px;"></td>
+                        <td>{{ $item->state_name}}</td>
+
 
                       {{-- <td>{{ $item['type']['type_name'] }}</td> --}}
 

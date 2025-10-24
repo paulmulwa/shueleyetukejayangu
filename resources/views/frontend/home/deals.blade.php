@@ -1,6 +1,8 @@
 @php
 
-$property = App\Models\Property::where('status', '1')->where('hot','1')->limit(6)->get();
+$property = App\Models\Property::latest()->where('status', '1')->where('hot','1')->limit(6)->get();
+//$blog = App\Models\BlogPost::latest()->limit(3)->get();
+
 //getting featured product where status and featured item is active
 
 @endphp
@@ -58,7 +60,7 @@ $property = App\Models\Property::where('status', '1')->where('hot','1')->limit(6
                     <div class="price-box clearfix">
                         <div class="price-info pull-left">
                             <h6>Start From</h6>
-                            <h4>Ksh{{ $item->lowest_price }}</h4>
+                        <h4>Ksh{{ number_format($item->lowest_price) }}</h4>
                         </div>
                         <ul class="other-option pull-right clearfix">
                             <li><a aria-label="Compare" class="action-btn"

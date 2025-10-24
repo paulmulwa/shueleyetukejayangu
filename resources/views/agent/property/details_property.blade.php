@@ -127,17 +127,6 @@
                                         <td><code>{{ $property['pstate']['state_name'] }}</code></td>
                                     </tr>
 
-
-
-
-
-
-
-
-
-
-
-
                                     <tr>
                                         <td>Longitude</td>
                                         <td><code>{{ $property->longitude }}</code></td>
